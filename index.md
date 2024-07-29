@@ -47,11 +47,12 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+My project is the Smart Mirror, which uses an open source modular smart mirror platform called Magic Mirror. The Smart Mirror is powered by raspberry and pi and is displayed on a HDMI monitor. So far I have finished the basis of the smart mirror and added and changed a few modules. I added a spotify module which is connected to my spotify account as well as a background module that allows me to put different background images on my Smart Mirror. I also modified the size and the place of certain modules on the mirror so that all the modules are displayed normally. 
+
+A few challenges I have been finding are learning different commands to add modules and changing the placement of certain modules. Adding modules requires me to put certain commands into the raspberry pi terminal which I have never done before, and modifying modules was difficult as each module has many files in different coding languages such as CSS and Javascript that affect module placement and function.
+
+I hope to implement a few more modules onto my smart mirror to improve the variety of functions my smart mirror can display. I'm also interested in adding a camera to the mirror or speakers and microphone so that I can code the Smart Mirror to react to certain sounds or movements.
+
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 

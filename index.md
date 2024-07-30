@@ -45,7 +45,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 
 
-<iframe width="560" height="315" src="[https://www.youtube.com/embed/CaCazFBhYKs](https://www.youtube.com/watch?v=vAhzwOk_3u8)" title="Bill W First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=vAhzwOk_3u8" title="Bill W First Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My project is the Smart Mirror, which uses an open source modular smart mirror platform called Magic Mirror. The Smart Mirror is powered by raspberry pi and is displayed on a HDMI monitor. So far I have finished the basis of the smart mirror and added and changed a few modules. I added a spotify module which is connected to my spotify account as well as a background module that allows me to put different background images on my Smart Mirror. I also modified the size and the place of certain modules on the mirror so that all the modules are displayed normally. 
 

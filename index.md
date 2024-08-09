@@ -10,7 +10,7 @@ My project is the Smart Mirror using the magic mirror software to show many appl
 
 ![IMG_6159](https://github.com/user-attachments/assets/64cf19a1-9644-45d1-b18e-e2f368937b1c)
 
-)
+
   
 
 

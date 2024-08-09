@@ -35,11 +35,14 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pFjmpbU6Lu8?si=69HFv4WDD_iIQSxV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+So far for milestone two I changed to a larger display to show the smart mirror, and I added a film and many more modules to the mirror. The film I added to the display is reflective so that the display can reflect objects and people like a mirror. The film was pretty difficult to put onto the mirror because it was larger than the display and I had to carefully cut the film so that it was the correct size. I tried my best to put the film on perfectly but I could never put the film onto the display with no air bubbles. At the end I just did the best I could and I was able to successfully have a reflective display that just had a few air bubbles.
+
+
+After putting on film it was most reflective when the background was pitch black and when I had my background module on it made the film nearly useless. Another problem that arose was through the long list of modules on github there were many that I wanted to add and my magic mirror display was getting too cramped to fit more modules. After some searching I came across a page module that allowed me to create many different pages on my smart mirror. The page module also recommended an indicator module to navigate between the pages. After adding both of these modules I was able to continue adding more modules and in addition fix my reflective film problem by dedicating a page to show my reflective film. I added a movie info module on the first page which shows popular movies. On the second page I only added a globe module which shows a pretty large spinning globe. On the third page I added a textclock module to have a different way to tell the time, a quote module that specifically showed stoic quotes, a puzzle module that shows different chess puzzles that I can solve, I also added a planet rise module to shows the rise and set times of planets relative to my time, and I added a nasa astronomy image module that changes the astronomy image daily as my background. On the fourth page I have it as pitch black so that the film on my mirror can be most reflective.
+
+On my previous milestone it was still pretty difficult to add modules due to the many long files and problems such as modules being too large or overlapping other applications. But by adding more modules I face these problems a lot more and through learning and practice I was able to figure out solutions easily and I am comfortably able to add more modules.
+
+I still wish to add voice activation so that I can navigate through my pages using my voice instead of my mouse and computer. I also still want to add a camera so that the mirror can understand my motions such as waving or getting distracted and can send me a warning or a signal to respond to my actions.
 
 # First Milestone
 

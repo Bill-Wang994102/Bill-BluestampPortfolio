@@ -62,16 +62,376 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
+/* Config Sample
+ *
+ * For more information on how you can configure this file
+ * see https://docs.magicmirror.builders/configuration/introduction.html
+ * and https://docs.magicmirror.builders/modules/configuration.html
+ *
+ * You can use environment variables using a `config.js.template` file instead of `config.js`
+ * which will be converted to `config.js` while starting. For more information
+ * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
+ */
 
-void loop() {
-  // put your main code here, to run repeatedly:
+    
 
-}
+let config = {
+	
+
+
+	
+	address: "localhost",	// Address to listen on, can be:
+							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
+							// - another specific IPv4/6 to listen on a specific interface
+							// - "0.0.0.0", "::" to listen on any interface
+							// Default, when address config is left out or empty, is "localhost"
+	port: 8080,
+	basePath: "/",	// The URL path where MagicMirror² is hosted. If you are using a Reverse proxy
+									// you must set the sub path here. basePath must end with a /
+	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],	// Set [] to allow all IP addresses
+									// or add a specific IPv4 of 192.168.1.5 :
+									// ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.1.5"],
+									// or IPv4 range of 192.168.3.0 --> 192.168.3.15 use CIDR format :
+									// ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.3.0/28"],
+
+	useHttps: false,			// Support HTTPS or not, default "false" will use HTTP
+	httpsPrivateKey: "",	// HTTPS private key path, only require when useHttps is true
+	httpsCertificate: "",	// HTTPS Certificate path, only require when useHttps is true
+
+	language: "en",
+	locale: "en-US",
+	logLevel: ["INFO", "LOG", "WARN", "ERROR"], // Add "DEBUG" for even more logging
+	timeFormat: 24,
+	units: "metric",
+
+	modules: [
+
+		{
+			module: 'MMM-page-indicator',
+			pages: {"pageNameOne": "bottom_bar", "pageNameTwo": "bottom_bar", "pageNameThree": "bottom_bar", "blank": "bottom_bar"},
+			config: {
+				pages: 2,
+				activeBright: true,
+			}
+		},
+		{
+			module: "MMM-Page-Selector",
+			position: "top_bar",
+			config: {
+				defaultPage: "pageNameOne",
+				displayTitle: true,
+			}
+		},
+		{
+			module: "MMM-APOD",
+			pages: {pageNameThree: "fullscreen_below"},
+			config: {
+				appid: "GfBH6tJ9nGeSzbWJ8pLCPwRg6gjahbMNiH9cSqxQ" // NASA API key (api.nasa.gov)
+				
+			}
+		},
+		{
+			module: "alert",
+		},
+		{
+			module: "updatenotification",
+			pages: {"pageNameOne": "top_bar"},
+		},
+		{
+			module: "clock",
+			pages: {"pageNameOne": "top_left", },
+		},
+		{
+			module: "calendar",
+			header: "Schedule",
+			pages: {"pageNameOne": "top_left"},
+			config: {
+				calendars: [
+					{
+						fetchInterval: 7 * 24 * 60 * 60 * 1000,
+						symbol: "calendar-check",
+						url: "webcal://p178-caldav.icloud.com/published/2/MjA2MDYyNTUxODQyMDYwNqZxAIF2XPkHkBjqdGpnjiqecnM7YtvzPdi30cmiesumT1f7vhNpT9QzPhpGKaYKmhHKFewdvhGFWx4zGexP1gw"
+					}
+				]
+			}
+		},
+		{
+			module: "compliments",
+			pages: {"pageNameOne": "lower_third"},
+
+		},
+		{
+			module: "weather",
+			pages: {"pageNameOne": "top_right"},
+			config: {
+				weatherProvider: "openmeteo",
+				type: "current",
+				lat: 47.6061,
+				lon: -122.3328,
+			}
+		},
+		{
+			module: "weather",
+			pages: {"pageNameOne": "top_right"},
+			header: "Weather Forecast",
+			config: {
+				weatherProvider: "openmeteo",
+				type: "forecast",
+				lat: 47.6061,
+				lon: -122.3328,
+			}
+		},
+		{
+			module: "newsfeed",
+			pages: {"pageNameOne": "top_center"},
+			config: {
+				feeds: [
+					{
+						title: "New York Times",
+						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
+			}
+		},
+	
+		{
+			/* Don't share your credentials! */
+			module: "MMM-OnSpotify",
+			pages: {"pageNameOne": "bottom_left" },
+				config: {
+				clientID: "16f92ba520be4e25b435507499a65ab8",
+				clientSecret: "80acf8a97c21434aab4760788ce8fbee",
+				accessToken: "BQARipBmW1pPlcTSEQaXfOURMugvCkDGrERmVSmsSXV9yWsnp2GBZJSwAYUPAKBLb4itI_qvv90XUO7S_9rToP0o_99Qd0P4WFanw6VUoX4-mCPenWtB9kWXd5f5bV-4X0Cg2KVoPb7-cM7PWwmoOmR_T0P7Qo2V2mcnzC-nZsiGIYz0US9V6H_WU9DJ0W38D6YkdrGHn0u1d-K7cFf3H2gEvkvyCOcHAvM",
+				refreshToken: "AQDtmP28TaeahHee8i1OH1hPrPHgUUGxTfR1nWoyL4-NkK8KHb0HULhBuP7NJ3AjjJQCcUww2k51KVyegDvWMYETqh3a5FHNv1xbB0VpXe7hoxU8f0XB2DXqjIuf4VZGEzg",
+				blurCorrectionInFrameSide: true,
+				/* Add here your theming and behaviour configurations */
+
+			}
+		},
+		{
+			module: 'MMM-BackgroundSlideshow',
+			pages: {PageNameOne: "fullscreen_below"},
+			config: {
+			  imagePaths: ['modules/MMM-BackgroundSlideshow/exampleImages/'],
+			  transitionImages: true,
+			  randomizeImageOrder: true
+			}
+		  },
+
+		  
+		  {
+            module: 'MMM-Motion-Camera',
+            config: {
+                // See below for configurable options
+            }
+        },
+
+	/*
+			{
+					module: 'voicecontrol',
+					position: 'bottom_left',
+					config: {
+						models: [
+							{
+								keyword: "playMusic",   // keyword 
+								description: "Say 'Play Music' to start playing",
+								file: "playMusic.pmdl", // trained model file name
+								message: "PLAY_MUSIC"   // notification message that's broadcast in the MagicMirror app
+							},
+							{
+								keyword: "stopMusic",
+								description: "Say 'Stop Music' to stop playing",
+								file: "stopMusic.pmdl",
+								message: "STOP_MUSIC"
+							},
+						]
+					}
+				},
+		*/  
+		/*{
+			module: "MMM-Voice-Commands",
+			config: {
+				debug: false, //Displays end results and errors from annyang in the Log
+				autoStart: true, //Adds annyang commands when it first starts
+				activateCommand: "hello mirror", //Command to active all other commands
+				deactivateCommand: "goodbye mirror", //Command to deactivate all other commands
+				alertHeard: false, //Whether an alert should be shown when annyang hears a phrase (mostly for debug)
+				commands: {
+					"command statement :variable (optional statement)": "SOCKET_NOTIFICATION_NAME",
+					//The payload of the socket notification will be whatever is said in the :variable
+					"command statement *variable": function(param){
+						alert("Whatever is said in the *variable space is given as the "+param);
+						//These function's 'this' are bound to the module's 'this' so you can do stuff like:
+						this.sendNotification("PAGE_SELECT", "2");
+					}
+				}
+			}
+		},*/
+				{
+					module: 'MMM-MovieInfo',
+					pages: {"pageNameOne": "bottom_right"},
+					config: {
+
+						api_key: "7db38df1efe573c0fd5e9a5cfe1605e5",
+        				
+						
+					}
+				},
+
+				{
+					module: 'MMM-Globe',
+					pages: {"pageNameTwo": "middle_center"},	// This can be any of the regions. Best results in lower_third
+					config: {
+							size:"medium", // Globe size. See configuration options below for more options
+							dayLength: 50, // (Optional) Rotation speed. See configuration options below
+							viewAngle: 15, // (Optional) Globe tilt. See configuration options below.
+							locations: [ 
+								// Fill with location Objects if desired
+								// e.g.
+								 {lat:37.77493,lng:-122.41942, label: "San Francisco"},
+								 {lat:-23.5475,lng:-46.63611, label: "Sao Paulo"}
+								
+								// Individual values must be seperated by a comma. 
+								// You can look up the latitude and longitude for a specific location on Google Maps.
+							]
+					}
+				},
+				
+				
+			  
+				//Example of the config for a module to be shown on pages: "pageNameOne" and "pageNameTwo"
+				
+				
+				/*{
+					module: 'MMM-ProfileControl',
+					position: 'bottom_bar',
+					config: {
+					  profiles: [
+						['pageOneEveryone', 'pageOneBirthdays'],
+						['pageTwoEveryone', 'pageTwoFamily', 'pageTwoLadies']
+					  ],
+				  
+					  horizontalActiveIcon: 'fa-eye',
+				  
+					  notifications: {
+						'pageOneEveryone' : [
+						  {
+							notification: 'HEY_THERE',
+							payload: {
+							  nobody: 'will react'
+							}
+						  },
+						  {
+							notification: 'HEY_THERE2',
+						  }
+						]
+					  }
+					}
+				  },
+				  */
+				  {
+					module: 'MMM-Hello-Mirror',
+					position: 'lower_third',
+					config: {
+						// See 'Configuration options' for more information.
+						voice: 'UK English Male',
+						language: 'en'
+					}
+				},
+				
+				{
+					module: "MMM-stoic-quotes",
+					pages: {pageNameThree: "bottom_right"},
+					config: {
+						size: "medium",
+						time: 60 * 60
+					}
+				},
+
+				{
+					disabled: false,
+					module: 'MMM-lichess-daily',
+					pages: {pageNameThree: "top_left"},
+					config: {
+					  // themes:
+					  //   * blue
+					  //   * blue2
+					  //   * blue3
+					  //   * canvas
+					  //   * wood
+					  //   * wood2
+					  //   * wood3
+					  //   * maple
+					  //   * green
+					  //   * marble
+					  //   * brown
+					  //   * leather
+					  //   * grey
+					  //   * metal
+					  //   * olive
+					  //   * purple
+					  theme: "grey",
+					  
+					  backgrounds: "dark",
+					  //   * light
+					  //   * dark
+					  bg: "auto",
+					  width: "224px",
+					  height: "264px",
+					  updateInterval: 60 * 60 * 1000,
+					}
+				  },
+				 
+				  {
+					module: "MMM-text-clock",
+					pages: {pageNameThree: "upper_third"},
+					config: {
+					  // Options
+						compact: true,
+						size: "large",
+					}
+				  },
+				  {
+					module: 'planetrise',
+					pages: {pageNameThree: "bottom_left"},	// This can be any of the regions.
+					header: 'PLanet Rise',
+					config: {  // Place the latitude and longitude of your mirror
+						latitude: 47.6061,
+						longitude: -122.3328,
+						// A dictiory of the bodies and unicode character for the symbol
+						// This is the default and does not need to be listed.
+						// A full list of bodies can be seen on line 1359 in astronomy.js
+						// Note: Trying to find the rise time of Earth will crash the Module
+						bodies: {'Sun': '☉',
+								'Moon': '☽',
+								'Mercury': '☿',
+								'Venus': '♀',
+								'Mars': '♂',
+								'Jupiter': '♃',
+								'Saturn': '♄',
+						}
+					}
+				},
+				 
+	]
+
+
+	
+
+	
+};
+
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== "undefined") { module.exports = config; }
+
+
+
+
 ```
 
 # Bill of Materials

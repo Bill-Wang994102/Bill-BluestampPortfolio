@@ -46,11 +46,9 @@ A few challenges I have been finding are learning different commands to add modu
 I hope to implement a few more modules onto my smart mirror to improve the variety of functions my smart mirror can display. I'm also interested in adding a camera to the mirror or speakers and microphone so that I can code the Smart Mirror to react to certain sounds or movements.
 
 
-# Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+
 
 ```c++
 /* Config Sample
@@ -426,8 +424,7 @@ if (typeof module !== "undefined") { module.exports = config; }
 ```
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
+
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
@@ -442,7 +439,5 @@ Don't forget to place the link of where to buy each component inside the quotati
 # Other Resources/Examples
 
 - [3d Party Modules]([https://trashytuber.github.io/YimingJiaBlueStamp/](https://github.com/MagicMirrorOrg/MagicMirror/wiki/3rd-party-modules))
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 

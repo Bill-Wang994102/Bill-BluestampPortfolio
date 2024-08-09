@@ -1,5 +1,5 @@
 # Smart Mirror Project
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+My project is the Smart Mirror using the magic mirror software to show many applications called modules each having different functions. Through these few weeks I was able to learn how to install many modules onto mirrors and how to edit them through css and java script. My smart mirror can display basic modules like my calendar and weather and more interesting modules like being able to display a large spinning globe, show interactive chess puzzles, and display the music I listen to on spotify in real time while also being a reflective mirror..
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 

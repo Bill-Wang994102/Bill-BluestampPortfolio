@@ -1,11 +1,12 @@
 # Smart Mirror Project
 My project is the Smart Mirror using the magic mirror software to show many applications called modules each having different functions. Through these few weeks I was able to learn how to install many modules onto mirrors and how to edit them through css and java script. My smart mirror can display basic modules like my calendar and weather and more interesting modules like being able to display a large spinning globe, show interactive chess puzzles, and display the music I listen to on spotify in real time while also being a reflective mirror..
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
+/*You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
 ```
+*/
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|

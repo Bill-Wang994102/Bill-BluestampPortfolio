@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/44deebed-e0ea-4090-a24c-46b37027c901)![image](https://github.com/user-attachments/assets/57597422-0a8b-4e66-a31d-39e101f2142d)![image](https://github.com/user-attachments/assets/2c074615-dc81-462c-be94-8aa706f72978)# Smart Mirror Project
+# Smart Mirror Project
 My project is the Smart Mirror using the magic mirror software to show many applications called modules each having different functions. Through these few weeks I was able to learn how to install many modules onto mirrors and how to edit them through css and java script. My smart mirror can display basic modules like my calendar and weather and more interesting modules like being able to display a large spinning globe, show interactive chess puzzles, and display the music I listen to on spotify in real time while also being a reflective mirror..
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
